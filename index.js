@@ -39,10 +39,17 @@ function displayTemperature(response) {
 
   let realDate = document.querySelector("#date");
   realDate.innerHTML = formatDate(response.data.dt * 1000);
+
+  let realIcon = document.querySelector("#icon");
+  realIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  realIcon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "13503136859e9dffd277dab65a0e3801";
-let city = "Paris";
+let city = "Athens";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
