@@ -22,8 +22,10 @@ function formatDate(timestamp) {
 }
 
 function displayTemperature(response) {
+  celsiusTemperature = response.data.main.temp;
+
   let realTemperature = document.querySelector("#temperature");
-  realTemperature.innerHTML = Math.round(response.data.main.temp);
+  realTemperature.innerHTML = Math.round(celsiusTemperature);
 
   let realCity = document.querySelector("#city");
   realCity.innerHTML = response.data.name;
@@ -59,5 +61,40 @@ function handleSubmit(event) {
   search(realCityInput.value);
 }
 
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let realTemperature = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let realFahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  realTemperature.innerHTML = Math.round(realFahrenheitTemperature);
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let realTemperature = document.querySelector("#temperature");
+  realTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let btn = document.querySelector("#btn");
+
+btn.addEventListener("click", onClick);
+
+function onClick() {
+  btn.style.backgroundColor = "rgb(242, 223, 58)";
+  btn.style.color = "rgb(0, 9, 87)";
+}
+
+let celsiusTemperature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+search("Kyiv");

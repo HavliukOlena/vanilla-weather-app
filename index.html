@@ -31,7 +31,12 @@
                 />
               </div>
               <div class="col-3">
-                <input type="submit" value="search" class="btn btn-primary" />
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary"
+                  id="btn"
+                />
               </div>
             </div>
           </form>
@@ -54,7 +59,10 @@
                 />
                 <div class="float-left">
                   <strong id="temperature"></strong>
-                  <span class="units">°C | <a href="#">°F</a></span>
+                  <span class="units">
+                    <a href="#" id="celsius-link" class="active">°C </a>|
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
                 </div>
               </div>
             </div>
