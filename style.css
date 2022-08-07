@@ -34,7 +34,7 @@ li:first-letter {
   padding: 20px;
   border: 1px solid rgb(0, 9, 87);
   border-radius: 5px;
-  background: linear-gradient(rgb(242, 223, 58), rgb(58, 180, 242));
+  background: linear-gradient(rgb(58, 180, 242), rgb(242, 223, 58));
 }
 .overview {
   margin-bottom: 20px;

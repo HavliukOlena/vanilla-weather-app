@@ -82,8 +82,8 @@ let btn = document.querySelector("#btn");
 btn.addEventListener("click", onClick);
 
 function onClick() {
-  btn.style.backgroundColor = "rgb(242, 223, 58)";
-  btn.style.color = "rgb(0, 9, 87)";
+  btn.style.backgroundColor = "rgb(0, 9, 87)";
+  btn.style.color = "rgb(242, 223, 58)";
 }
 
 let celsiusTemperature = null;
