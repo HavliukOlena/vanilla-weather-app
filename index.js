@@ -20,6 +20,34 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day}   ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
+              <div class="col-2">
+                <div class="weathre-forecast-date">Mon</div>
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="partly_cloudy"
+                  width="45"
+                />
+                <div class="weathre-forecast-temprature">
+                  <span class="weathre-forecast-temprature-max">20°</span>
+                  <span class="weathre-forecast-temprature-min">18°</span>
+                </div>
+              </div>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayTemperature(response) {
   celsiusTemperature = response.data.main.temp;
@@ -98,3 +126,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Kyiv");
+displayForecast();
