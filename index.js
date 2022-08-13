@@ -100,7 +100,7 @@ function displayTemperature(response) {
   let realIcon = document.querySelector("#icon");
   realIcon.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   realIcon.setAttribute("alt", response.data.weather[0].description);
 
