@@ -34,7 +34,7 @@ li:first-letter {
   padding: 20px;
   border: 1px solid rgb(0, 9, 87);
   border-radius: 5px;
-  background: linear-gradient(rgb(246, 246, 246), rgb(242, 223, 58));
+  background: linear-gradient(rgb(155, 163, 235), rgb(219, 223, 253));
 }
 .overview {
   margin-bottom: 20px;
@@ -56,8 +56,8 @@ li:first-letter {
   top: -32px;
 }
 #btn {
-  background-color: rgb(58, 180, 242);
-  color: rgb(0, 9, 87);
+  background-color: #242f9b;
+  color: white;
 }
 .weather-temperature.active {
   color: rgb(0, 9, 87);
